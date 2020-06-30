@@ -19,6 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
+      theme: ThemeData(          // Add the 3 lines from here...
+        primaryColor: Color(0xfffaf3dd),
+      ),
       home: MainPage(),
     );
   }
@@ -72,7 +75,7 @@ class _MainPage extends State<MainPage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Color(0xffffa69e),
         onTap: _onItemTapped,
       ),
     );
