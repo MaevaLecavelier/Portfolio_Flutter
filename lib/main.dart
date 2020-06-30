@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/perso.dart';
@@ -5,12 +7,12 @@ import 'package:portfolio/profile.dart';
 import 'package:portfolio/scholar.dart';
 
 import 'formation.dart';
-//import 'package:flutter/rendering.dart';
+import 'package:flutter/rendering.dart';
 
 
 
 void main() {
-  //debugPaintSizeEnabled = true;
+  debugPaintSizeEnabled = false;
   runApp(MyApp());
 }
 
@@ -58,24 +60,28 @@ class _MainPage extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.insert_emoticon, color: Colors.blueGrey),
-            title: Text('Profil'),
+            backgroundColor: Color(0xfffaf3dd),
+            icon: Icon(Icons.insert_emoticon, color: Colors.black54),
+            title: Text('Profil', style: TextStyle(fontWeight: FontWeight.bold),),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business, color: Colors.blueGrey),
-            title: Text('Formation'),
+            backgroundColor: Color(0xfffaf3dd),
+            icon: Icon(Icons.business, color: Colors.black54),
+            title: Text('Formation', style: TextStyle(fontWeight: FontWeight.bold),),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.lightbulb_outline , color: Colors.blueGrey),
-            title: Text('Projets personnels'),
+            backgroundColor: Color(0xfffaf3dd),
+            icon: Icon(Icons.lightbulb_outline , color: Colors.black54),
+            title: Text('Projets personnels', style: TextStyle(fontWeight: FontWeight.bold),),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school, color: Colors.blueGrey),
-            title: Text('Projets scolaires'),
+            backgroundColor: Color(0xfffaf3dd),
+            icon: Icon(Icons.school, color: Colors.black54),
+            title: Text('Projets scolaires', style: TextStyle(fontWeight: FontWeight.bold),),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xffffa69e),
+        selectedItemColor: Colors.black54,
         onTap: _onItemTapped,
       ),
     );
