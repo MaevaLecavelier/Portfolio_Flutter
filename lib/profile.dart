@@ -23,6 +23,7 @@ class _ProfilePage extends State<ProfilePage> {
                     _ProfilePicture(),
                     _Description(),
                     _Skills(),
+                    _Languages(),
                   ],
           )
         ),
@@ -105,7 +106,7 @@ class _ProfilePage extends State<ProfilePage> {
           child: Row(
             children: <Widget>[
                 Icon(Icons.bookmark),
-                Text("  Skills", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+                Text("  Compétences", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
             ],
           ),
         ),
@@ -128,6 +129,29 @@ class _ProfilePage extends State<ProfilePage> {
     );
   }
 
+  Widget _Languages(){
+    return Column(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 20.0),
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.bookmark),
+              Text("  Langues", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+            ],
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            createLang("asset/images/skills/anglais.jpg"),
+            createLang("asset/images/skills/france.jpg")
+          ],
+        ),
+      ],
+    );
+  }
+
   Widget createSkill(String name){
     return Container(
         padding: EdgeInsets.all(15.0),
@@ -143,5 +167,22 @@ class _ProfilePage extends State<ProfilePage> {
         )
     );
   }
+
+  Widget createLang(String name){
+    return Container(
+        padding: EdgeInsets.all(15.0),
+        margin: EdgeInsets.fromLTRB(50, 15, 50, 15),
+        width: 60.0,
+        height: 60.0,
+        decoration: new BoxDecoration(
+          shape: BoxShape.circle,
+          image: new DecorationImage(
+              fit: BoxFit.contain,
+              image: AssetImage(name)
+          ),
+        )
+    );
+  }
 }
+
 
